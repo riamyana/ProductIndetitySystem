@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DefaultComponent } from './default.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { HttpClientModule } from '@angular/common/http';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 
 
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     FlexLayoutModule,
     QRCodeModule,
-    HttpClientModule
+    HttpClientModule,
+    ZXingScannerModule
   ],
   exports: [
     DefaultComponent,

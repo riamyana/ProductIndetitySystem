@@ -42,10 +42,8 @@
 
             <div fxLayout="column" *ngIf="generated"  fxLayoutAlign="space-around center">
                 <label for="productId" style="font-weight: bold;size: 30px;padding-top: 20px;">Product Id: {{productId}}</label>
-                <qrcode #qr [qrdata]="qrData"  [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
-                <button mat-raised-button type="submit" color="primary" color="warn" (click)="onSaveQr(qr)">
-                    Download QR Code
-                </button>
+                <qrcode #qr id="qrcode" [qrdata]="qrData"  [elementType]="elementType" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+                <a mat-raised-button color="primary" [href]="href" (click)="download()" download>Download QR Code</a>
             </div>
             
         </form>

@@ -3,6 +3,7 @@ import { EthcontractService } from './../../service/ethcontract.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-product-details',
@@ -18,6 +19,8 @@ export class ProductDetailsComponent implements OnInit {
   // added: BehaviorSubject<Boolean>;
   added: Boolean = false;
   generated: Boolean = false;
+  href: string;
+  elementType: 'url' | 'canvas' | 'img' = 'url';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -171,6 +174,30 @@ export class ProductDetailsComponent implements OnInit {
     console.log(parentElement);
 
     // saveAs
+  }
+
+  download() {
+    // debugger;
+    // const qrcode = document.getElementById('qrcode');
+    // let doc = new jsPDF();
+
+    // let imageData= this.getBase64Image(qrcode.firstChild.firstChild);
+    // doc.addImage(imageData, "JPG",10, 10, 10, 10);
+
+    // doc.save('FirstPdf.jpg');
+
+    this.href = document.getElementsByTagName('img')[0].src;
+  }
+
+  getBase64Image(img) {
+    debugger;
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    var dataURL = canvas.toDataURL("image/png");
+    return dataURL;
   }
   
 
