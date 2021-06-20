@@ -11,6 +11,7 @@ declare let window: any;
 
 let tokenAbi = require('../../../build/contracts/Product.json');
 const contract = require('truffle-contract');
+var Personal = require('web3-eth-personal');
 
 @Injectable({
   providedIn: 'root'
@@ -322,6 +323,10 @@ export class EthcontractService {
     // });
 
 
+  }
+
+  demoSignIn() {
+    // Web3.personal.sign(Web3.fromUtf8("Hello from Toptal!"), web3.eth.coinbase, console.log);
   }
 
   getAccountInfo() {

@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -49,7 +50,8 @@ const MaterialComponents = [
   MatButtonModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MaterialFileInputModule
 ];
 
 @NgModule({
