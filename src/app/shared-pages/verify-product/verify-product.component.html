@@ -1,0 +1,31 @@
+<!-- <div *ngIf="loader.isLoading | async" class="loader">
+    <mat-spinner style="top:40%; left:20%" color="primary"></mat-spinner>
+</div> -->
+
+<div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="space-around center" class="container">
+    <mat-card fxFlex="50" fxFlex.xs="100%" fxFlex.md="50%" fxFlex.sm="70%" fxLayoutAlign="space-around center">
+        <form class="form" fxLayout="column" fxFlex="100" fxLayoutAlign="center" [formGroup]="verifyProductForm">
+            <div fxLayout="row" fxLayoutGap="30px">
+                <mat-form-field fxFlex="100" color="accent" appearance="fill">
+                    <mat-label>Enter Product Id</mat-label>
+                    <input matInput placeholder="Product Id" formControlName="id">
+                    <mat-error>
+                        Please provide a valid Product Id
+                    </mat-error>
+                </mat-form-field>
+
+                <div fxLayout="row" fxLayoutGap="20px">
+                    <button mat-raised-button type="submit" style="height:70%;" color="primary" color="accent" (click)="onVerify()">Verify Product</button>
+                </div>
+            </div>
+
+            <div *ngIf="afterClicked" class="verified">
+                <label for="">{{(fake)?'Product is Fake...!':'Product is Real...!'}}</label>
+                <span class="material-icons" *ngIf="!fake">sentiment_satisfied_alt</span>
+                <span class="material-icons" *ngIf="fake">sentiment_very_dissatisfied</span>
+                    
+            </div>
+            
+        </form>
+    </mat-card>
+</div>
